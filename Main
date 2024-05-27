@@ -1,14 +1,10 @@
 fun reverseWord(input: String): String {
-    var list = mutableListOf<String>()
     var backword = ""
-    for (character in input){
-        list.add(character.toString())
-    }
-
-    while(list.size!=0){
-        backword += list.removeAt(list.size - 1)
+    
+    for (i in 1..input.length){
+        backword += input[input.length - i]
     }
     return  backword
 }
+reverseWord("string")
 
-reverseWord("hi")
