@@ -1,10 +1,16 @@
-fun reverseWord(input: String): String {
+fun spaceReverse(input: String): String {
     var backword = ""
-    
-    for (i in 1..input.length){
-        backword += input[input.length - i]
+    var wordList = mutableListOf<String>()
+    if (" " in input) {
+        wordList = input.split(" ").toMutableList()
     }
-    return  backword
+
+    for (word in wordList) {
+        for (wordIndex in 0..word.length - 1) {
+            backword += word[word.length - 1 - wordIndex].toString()
+        }
+    }
+    return backword
 }
-reverseWord("string")
+spaceReverse("hello world haha")
 
